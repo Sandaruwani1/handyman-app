@@ -11,7 +11,9 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
-export const HandymanForm = () => {
+export const HandymanForm = (props) => {
+    const setValue=props.setValue;
+    const userdata =props.userdata;
     return (<div>
 
 
@@ -29,16 +31,16 @@ export const HandymanForm = () => {
           <h1 alignItems="center" justify="center"> Add A New Handyman</h1>
          <div>
          <Grid xs={8}>
-          <TextField id="outlined-basic" label="First Name" variant="outlined" />
+          <TextField id="outlined-basic" label="First Name" variant="outlined" name="firstName" onChange={setValue} value={userdata.firstName}/>
          </Grid>
          <Grid xs={8}>
-                   <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+                   <TextField id="outlined-basic" label="Last Name" variant="outlined" name="lastName" onChange={setValue} value={userdata.lastName}/>
                   </Grid>
           <Grid xs={8}>
-           <TextField id="outlined-basic" label="Address" variant="outlined" />
+           <TextField id="outlined-basic" label="Address" variant="outlined" name="address" onChange={setValue} value={userdata.address}/>
           </Grid>
           <Grid xs={8}>
-                     <TextField id="outlined-basic" label="Contact" variant="outlined" />
+                     <TextField id="outlined-basic" label="Contact" variant="outlined"  name="contact" onChange={setValue} value={userdata.contact}/>
           </Grid>
 
 
@@ -54,7 +56,7 @@ export const HandymanForm = () => {
                              </TextField>
            </Grid>
             <Grid xs={8}>
-            <Button variant="outlined">Create Handyman</Button>
+            <Button variant="outlined" type="submit">Create Handyman</Button>
             </Grid>
 
 
